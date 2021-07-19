@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_40sdp"
+        app:layout_anchor="@id/bottomBarView"
+        app:layout_anchorGravity="top|center" />
+
+    <me.ibrahimsn.lib.NiceBottomBar
+        android:id="@+id/bottomBarView"
+        android:gravity="bottom|center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="bottom|center"
+        app:menu="@menu/bottom_bar"
+        app:backgroundColor="@color/tabcolor"
+        app:indicatorEnabled="true"
+        app:indicatorColor="@color/colorPrimary"
+        app:indicatorWidth="@dimen/_2sdp"
+        app:indicatorGravity="top"
+        app:textColor="@color/white"
+        app:textColorActive="@color/colorPrimary"
+        app:textSize="@dimen/_10sdp"
+        app:itemFontFamily="@font/regular"
+        app:indicatorInterpolator="anticipateOvershoot"/>
+
+    <ViewStub
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/network_error"
+        android:id="@+id/home_error"
+        app:layout_anchor="@id/bottomBarView"
+        app:layout_anchorGravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

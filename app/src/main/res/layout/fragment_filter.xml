@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".Fragment.FilterFragment">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:id="@+id/linear_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/bold"
+            android:gravity="center|start"
+            android:text="Filter"
+            android:padding="@dimen/_3sdp"
+            android:textAllCaps="false"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="normal" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/filter" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:cardBackgroundColor="@color/background"
+        app:cardUseCompatPadding="true"
+        app:strokeColor="@color/black"
+        app:strokeWidth="@dimen/_1sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/background"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:padding="@dimen/_5sdp"
+                android:text="PLANS"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/filter_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.ornach.nobobutton.NoboButton
+            android:id="@+id/apply_btn"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:nb_backgroundColor="@color/buttoncolor"
+            app:nb_borderColor="@color/warm_grey"
+            app:nb_borderWidth="@dimen/_1sdp"
+            app:nb_focusColor="@color/buttoncolor"
+            app:nb_gravity="center"
+            app:nb_radius="@dimen/_5sdp"
+            app:nb_text="APPLY"
+            app:nb_textAllCaps="true"
+            app:nb_textColor="@color/white"
+            app:nb_textSize="@dimen/_10sdp"
+            app:nb_textStyle="bold" />
+
+        <com.ornach.nobobutton.NoboButton
+            android:id="@+id/revert_btn"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:nb_backgroundColor="@color/buttoncolor"
+            app:nb_borderColor="@color/warm_grey"
+            app:nb_borderWidth="@dimen/_1sdp"
+            app:nb_focusColor="@color/buttoncolor"
+            app:nb_gravity="center"
+            app:nb_radius="@dimen/_5sdp"
+            app:nb_text="REVERT"
+            app:nb_textAllCaps="true"
+            app:nb_textColor="@color/white"
+            app:nb_textSize="@dimen/_10sdp"
+            app:nb_textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/_1sdp"
+                tools:src="@drawable/noimage" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editname_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17sdp"
+            app:textAllCaps="true"
+            android:padding="@dimen/_5sdp"
+            tools:text="Venkateshan" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/editprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableLeft="@drawable/editcircle"
+            android:fontFamily="@font/regular"
+            android:drawablePadding="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/editprofile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_weight="0"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Name : "
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="true"
+                android:padding="@dimen/_5sdp"
+                android:maxLines="2"
+                android:fontFamily="@font/bold"
+                android:textColor="@color/linkcolor"
+                android:layout_gravity="end|center"
+                android:gravity="end|center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/edit_name"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="true"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_weight="0"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Mobile No : "
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="true"
+                android:padding="@dimen/_5sdp"
+                android:maxLines="2"
+                android:textColor="@color/linkcolor"
+                android:layout_gravity="end|center"
+                android:fontFamily="@font/bold"
+                android:gravity="end|center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/edit_mobileno"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="true"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_weight="0"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:text="Alternate Mobile No : "
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="true"
+                android:padding="@dimen/_5sdp"
+                android:maxLines="2"
+                android:textColor="@color/linkcolor"
+                android:layout_gravity="end|center"
+                android:fontFamily="@font/bold"
+                android:gravity="end|center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/edit_altermobile"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="true"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

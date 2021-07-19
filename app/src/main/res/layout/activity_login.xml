@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_lay"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/log_logo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/eyetech_logo"
+            android:layout_gravity="center"
+            android:padding="@dimen/_5sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/log_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/red_ring"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="LOGIN"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_20sdp" />
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                    android:id="@+id/log_mobile_tfb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:iconSignifier="@drawable/mobile"
+                    app:errorColor="@android:color/holo_red_light"
+                    app:helperText=""
+                    app:hasClearButton="true"
+                    app:isResponsiveIconColor="true"
+                    app:useDenseSpacing="true"
+                    app:primaryColor="@color/white"
+                    app:secondaryColor="@color/white"
+                    app:panelBackgroundColor="@android:color/transparent"
+                    app:labelText="Mobile Number">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                        android:id="@+id/log_mobile_eet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:imeOptions="actionDone"
+                        android:fontFamily="@font/regular"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"/>
+
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                    android:id="@+id/log_name_tfb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:iconSignifier="@drawable/mobile"
+                    app:errorColor="@android:color/holo_red_light"
+                    app:helperText=""
+                    app:hasClearButton="true"
+                    app:isResponsiveIconColor="true"
+                    app:useDenseSpacing="true"
+                    app:primaryColor="@color/white"
+                    app:secondaryColor="@color/white"
+                    app:panelBackgroundColor="@android:color/transparent"
+                    android:visibility="gone"
+                    app:labelText="Name">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                        android:id="@+id/log_name_eet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:maxLength="10"
+                        android:imeOptions="actionDone"
+                        android:fontFamily="@font/regular"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"/>
+
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                <com.ornach.nobobutton.NoboButton
+                    android:id="@+id/log_mobile_continue_btn"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_margin="@dimen/_20sdp"
+                    app:nb_text="@string/continues"
+                    app:nb_borderColor="@color/white"
+                    app:nb_borderWidth="@dimen/_1sdp"
+                    app:nb_backgroundColor="@color/buttoncolor"
+                    app:nb_focusColor="@color/buttoncolor"
+                    app:nb_textColor="@color/white"
+                    app:nb_radius="@dimen/_5sdp"
+                    app:nb_gravity="center"
+                    app:nb_textAllCaps="true"
+                    app:nb_textSize="@dimen/_12sdp"
+                    app:nb_textStyle="bold"
+                    app:nb_iconPosition="left"
+                    app:nb_fontIcon="@string/icon"
+                    app:nb_iconPadding="@dimen/_5sdp"
+                    app:nb_drawableResource="@drawable/login_arrow"/>
+
+                <LinearLayout
+                    android:id="@+id/log_mobile_submit_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <com.ornach.nobobutton.NoboButton
+                        android:id="@+id/log_mobile_submit_btn"
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        app:nb_text="@string/submit"
+                        app:nb_borderColor="@color/white"
+                        app:nb_borderWidth="@dimen/_1sdp"
+                        app:nb_backgroundColor="@color/buttoncolor"
+                        app:nb_focusColor="@color/buttoncolor"
+                        app:nb_textColor="@color/white"
+                        app:nb_radius="@dimen/_5sdp"
+                        app:nb_gravity="center"
+                        app:nb_textAllCaps="true"
+                        app:nb_textSize="@dimen/_12sdp"
+                        app:nb_textStyle="bold"
+                        app:nb_iconPosition="left"
+                        app:nb_fontIcon="@string/icon"
+                        app:nb_iconPadding="@dimen/_5sdp"
+                        app:nb_drawableResource="@drawable/login_arrow"/>
+
+                    <com.ornach.nobobutton.NoboButton
+                        android:id="@+id/back_btn"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        app:nb_borderColor="@color/white"
+                        app:nb_borderWidth="@dimen/_1sdp"
+                        app:nb_backgroundColor="@color/buttoncolor"
+                        app:nb_focusColor="@color/buttoncolor"
+                        app:nb_radius="@dimen/_5sdp"
+                        app:nb_gravity="center"
+                        app:nb_textAllCaps="true"
+                        app:nb_textSize="@dimen/_12sdp"
+                        app:nb_textStyle="bold"
+                        app:nb_iconPosition="left"
+                        app:nb_fontIcon="@string/icon"
+                        app:nb_iconPadding="@dimen/_5sdp"
+                        app:nb_drawableResource="@drawable/white_back"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/otp_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/red_ring"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="OTP"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/_20sdp" />
+
+            <in.aabhasjindal.otptextview.OtpTextView
+                android:id="@+id/otp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:height="40dp"
+                app:width="40dp"
+                app:bar_enabled="true"
+                app:bar_height="2dp"
+                app:length="6"
+                app:otp=""
+                app:otp_text_size="@dimen/_20sdp"
+                app:bar_inactive_color="@color/linkcolor"
+                android:layout_gravity="center"
+                app:bar_active_color="@color/white"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <com.ornach.nobobutton.NoboButton
+                android:id="@+id/log_verify_btn"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_20sdp"
+                app:nb_text="Verify"
+                app:nb_borderColor="@color/white"
+                app:nb_borderWidth="@dimen/_1sdp"
+                app:nb_backgroundColor="@color/buttoncolor"
+                app:nb_focusColor="@color/buttoncolor"
+                app:nb_textColor="@color/white"
+                app:nb_radius="@dimen/_5sdp"
+                app:nb_gravity="center"
+                app:nb_textAllCaps="true"
+                app:nb_textSize="@dimen/_12sdp"
+                app:nb_textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_skip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_weight="0"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="0.5dp"
+                android:background="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/log_skip"
+                android:layout_weight="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:text="Skip Now"
+                android:textAllCaps="false"
+                android:textColor="@color/linkcolor"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp" />
+
+            <View
+                android:layout_weight="0"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="0.5dp"
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

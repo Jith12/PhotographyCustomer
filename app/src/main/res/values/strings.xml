@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PhotographyCustomer</string>
+    <string name="continues">Continue</string>
+    <string name="submit">Submit</string>
+    <string name="save">Save Changes</string>
+    <string name="discard">Discard</string>
+    <string name="editprofile">Edit Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

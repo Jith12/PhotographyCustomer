@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_images"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="0"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/noimage"
+                app:civ_border_color="#FFFFFFFF"
+                app:civ_border_width="1dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/edit_mainnames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_weight="1"
+                android:fontFamily="@font/regular"
+                android:gravity="start|center"
+                android:padding="@dimen/_5sdp"
+                android:text="Test"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:fontFamily="@font/bold"
+                android:gravity="end"
+                android:padding="@dimen/_5sdp"
+                android:text="NAME :"
+                android:textColor="@color/linkcolor"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_names"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:focusable="true"
+                android:fontFamily="@font/regular"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:fontFamily="@font/bold"
+                android:gravity="end"
+                android:padding="@dimen/_5sdp"
+                android:text="Mobile No :"
+                android:textColor="@color/linkcolor"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_mobilenos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:focusable="false"
+                android:clickable="false"
+                android:editable="false"
+                android:fontFamily="@font/regular"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:fontFamily="@font/bold"
+                android:gravity="end"
+                android:padding="@dimen/_5sdp"
+                android:text="Alternate Mobile No :"
+                android:textColor="@color/linkcolor"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_altermobiles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:focusable="true"
+                android:fontFamily="@font/regular"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.ornach.nobobutton.NoboButton
+                android:id="@+id/edit_save"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                app:nb_backgroundColor="@color/linkcolor"
+                app:nb_borderColor="@color/black"
+                app:nb_borderWidth="@dimen/_1sdp"
+                app:nb_focusColor="@color/linkcolor"
+                app:nb_gravity="center"
+                app:nb_radius="@dimen/_5sdp"
+                app:nb_text="@string/save"
+                app:nb_textAllCaps="true"
+                app:nb_textColor="@color/white"
+                app:nb_textSize="@dimen/_12sdp"
+                app:nb_textStyle="bold" />
+
+            <com.ornach.nobobutton.NoboButton
+                android:id="@+id/edit_discard"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                app:nb_backgroundColor="@color/buttoncolor"
+                app:nb_borderColor="@color/white"
+                app:nb_borderWidth="@dimen/_1sdp"
+                app:nb_focusColor="@color/buttoncolor"
+                app:nb_gravity="center"
+                app:nb_radius="@dimen/_5sdp"
+                app:nb_text="@string/discard"
+                app:nb_textAllCaps="true"
+                app:nb_textColor="@color/white"
+                app:nb_textSize="@dimen/_12sdp"
+                app:nb_textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
