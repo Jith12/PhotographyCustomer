@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import thebat.lib.validutil.ValidUtils;
 
 public class RetrofitBase {
-
+//Retrofit
     public static Retrofit retrofit = null;
     public static Retrofit razorpay_retrofit = null;
     private final static long CACHE_SIZE = 10 * 1024 * 1024; // 10MB Cache size
