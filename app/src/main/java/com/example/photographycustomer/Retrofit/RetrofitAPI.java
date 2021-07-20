@@ -1,7 +1,10 @@
 package com.example.photographycustomer.Retrofit;
 
+import com.example.photographycustomer.Response.AddsetResponse;
 import com.example.photographycustomer.Response.AllViewResponse;
+import com.example.photographycustomer.Response.CollectionResponse;
 import com.example.photographycustomer.Response.ExistResponse;
+import com.example.photographycustomer.Response.FlagResponse;
 import com.example.photographycustomer.Response.MobileResponse;
 import com.example.photographycustomer.Response.NameResponse;
 import com.example.photographycustomer.Response.OtpResponse;
@@ -18,6 +21,13 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface RetrofitAPI {
+
+    @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
+    @FormUrlEncoded
+    @POST("customer/checkMobileno")
+    Call<FlagResponse> flagset(
+            @Field("mobileno") String mobileno
+    );
 
     @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
     @FormUrlEncoded
@@ -98,5 +108,21 @@ public interface RetrofitAPI {
             @Field("name") String name,
             @Field("altermobileno") String altermobileno,
             @Field("mobileno") String mobileno
+    );
+
+    @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
+    @FormUrlEncoded
+    @POST("customer/collectionShow")
+    Call<CollectionResponse> collectionlist(
+            @Field("customerid") String customerid
+    );
+
+    @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
+    @FormUrlEncoded
+    @POST("customer/addSet")
+    Call<AddsetResponse> addsetlist(
+            @Field("customerid") String customerid,
+            @Field("photographerid") String photographerid,
+            @Field("collectionid") String collectionid
     );
 }

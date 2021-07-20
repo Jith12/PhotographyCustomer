@@ -16,6 +16,7 @@ import com.example.photographycustomer.Helper.Loader;
 import com.example.photographycustomer.Helper.Snackbar;
 import com.example.photographycustomer.R;
 import com.example.photographycustomer.Response.ExistResponse;
+import com.example.photographycustomer.Response.FlagResponse;
 import com.example.photographycustomer.Response.MobileResponse;
 import com.example.photographycustomer.Response.NameResponse;
 import com.example.photographycustomer.Response.OtpResponse;
@@ -82,14 +83,16 @@ public class LoginActivity extends AppCompatActivity {
             if (ValidUtils.isNetworkAvailable(Objects.requireNonNull(this))){
                 if(Validate()){
                     String mobileno = log_mobile_eet.getText().toString();
-                    if(userid.equals(""))
+                    /*if(userid.equals(""))
                     {
                         nextstep(mobileno);
                     }
                     else
                     {
                         nextstepthree(userid);
-                    }
+                    }*/
+
+                    checkvalid(mobileno);
                 }
             }else {
                 snackbar.warning("Check Your Network Connection");
@@ -126,6 +129,54 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             Animatoo.animateFade(LoginActivity.this);
             finish();
+        });
+    }
+
+    private void checkvalid(String mobileno) {
+        loader.show("");
+        RetrofitAPI api = RetrofitBase.getRetrofit(this).create(RetrofitAPI.class);
+        Call<FlagResponse> call = api.flagset(mobileno);
+
+        call.enqueue(new Callback<FlagResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<FlagResponse> call, @NotNull Response<FlagResponse> response) {
+                try {
+                    if (response.isSuccessful()){
+                        FlagResponse data = response.body();
+                        loader.dismiss("");
+                        if (data != null){
+                            Boolean status = Objects.requireNonNull(data).getStatus();
+                            String message = data.getMessage();
+                            if (status){
+                                Prefs.putString("c_id",data.getUserid());
+                                nextstepthree(data.getUserid());
+
+                            }else {
+                                nextstep(mobileno);
+                            }
+                        }
+                    }else {
+                        loader.dismiss("");
+                        ErrorUtils errorUtils = RetrofitERROR.parseError(response);
+                        snackbar.warning(errorUtils.message());
+                    }
+                }catch (Exception e){
+                    loader.dismiss("");
+                    Log.e("Catch Exception",Objects.requireNonNull(e.getMessage()));
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<FlagResponse> call, @NotNull Throwable t) {
+                loader.dismiss("");
+                if (t instanceof SocketTimeoutException){
+                    snackbar.warning("Timeout, Retrying Again. Please Wait");
+                    new Handler().postDelayed(() -> checkvalid(mobileno), 3000);
+                }else if (t instanceof UnknownHostException){
+                    snackbar.warning("Unknown Host, Check your URL");
+                }
+                Log.e("Failure Exception", Objects.requireNonNull(t.getMessage()));
+            }
         });
     }
 

@@ -59,7 +59,8 @@ public class RetrofitBase {
             retrofit = new Retrofit.Builder()
                     .client(buildClient(context))
                     .addConverterFactory(GsonConverterFactory.create(gson))
-                    .baseUrl("http://192.168.1.46/photography/api/")
+                    //.baseUrl("http://192.168.1.46/photography/api/")
+                    .baseUrl("http://192.168.43.76/photography/api/")
                     .build();
         }
         return retrofit;
