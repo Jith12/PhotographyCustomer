@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="@dimen/_3sdp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_3sdp"
+        app:cardMaxElevation="@dimen/_3sdp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_margin="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:background="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/studio_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                tools:src="@drawable/noimage"
+                android:padding="@dimen/_5sdp"
+                app:civ_border_width="1dp"
+                android:background="@color/background"
+                app:civ_border_color="#FF000000"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:id="@+id/studio_name"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="@dimen/_3sdp"
+                android:id="@+id/role_name"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
