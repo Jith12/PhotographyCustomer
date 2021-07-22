@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <!-- HEADER -->
+
+    <LinearLayout
+        android:id="@+id/top_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:background="@color/black">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/folder_image"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/folder"
+            android:padding="@dimen/_5sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:lines="1"
+            android:maxLines="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text=""
+            android:padding="@dimen/_2sdp"
+            android:layout_gravity="start|center"
+            android:gravity="start|center"
+            android:id="@+id/function_name"/>
+
+    </LinearLayout>
+
+    <!-- FOOTER -->
+    <LinearLayout
+        android:id="@+id/bottom_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:layout_alignParentBottom="true">
+
+        <!-- menu bar -->
+
+        <com.ornach.nobobutton.NoboButton
+            android:id="@+id/btn_submit"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_5sdp"
+            app:nb_text="@string/submit"
+            app:nb_borderColor="@color/white"
+            app:nb_borderWidth="@dimen/_1sdp"
+            app:nb_backgroundColor="@color/buttoncolor"
+            app:nb_focusColor="@color/buttoncolor"
+            app:nb_textColor="@color/white"
+            app:nb_radius="@dimen/_5sdp"
+            app:nb_gravity="center"
+            app:nb_textAllCaps="true"
+            app:nb_textSize="@dimen/_12sdp"
+            app:nb_textStyle="bold"
+            app:nb_iconPosition="left"
+            app:nb_iconPadding="@dimen/_5sdp"/>
+
+    </LinearLayout>
+
+    <!-- MAIN PART -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/top_header"
+        android:layout_above="@id/bottom_menu"
+        android:id="@+id/sub_content_view"
+        android:paddingBottom="5sp"
+        android:background="@color/background">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycle_photolist"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
