@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.photographycustomer.Fragment.PhotoListFragment;
 import com.example.photographycustomer.R;
 import com.example.photographycustomer.Response.AddsetResponse;
 
@@ -41,12 +42,12 @@ public class AddsetAdapter extends RecyclerView.Adapter<AddsetAdapter.ViewHolder
         holder.studioName.setText(item.getEventName());
 
         holder.itemView.setOnClickListener(v -> {
-            /*FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
-            CollectionListFragment collectionListFragment = CollectionListFragment.newInstance(item.getType(),
-                    String.valueOf(item.getId()));
-            ft.replace(R.id.container, collectionListFragment);
+            FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
+            PhotoListFragment photoListFragment = PhotoListFragment.newInstance(item.getId(),item.getCustomerId(),
+                    item.getPhotographerId(),item.getCollectionId(),item.getEventName());
+            ft.replace(R.id.container, photoListFragment);
             ft.addToBackStack(null);
-            ft.commit();*/
+            ft.commit();
         });
     }
 

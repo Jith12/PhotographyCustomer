@@ -8,6 +8,7 @@ import com.example.photographycustomer.Response.FlagResponse;
 import com.example.photographycustomer.Response.MobileResponse;
 import com.example.photographycustomer.Response.NameResponse;
 import com.example.photographycustomer.Response.OtpResponse;
+import com.example.photographycustomer.Response.PhotoResponse;
 import com.example.photographycustomer.Response.ProfSaveResponse;
 import com.example.photographycustomer.Response.ProfViewResponse;
 import com.example.photographycustomer.Response.SixViewResponse;
@@ -124,5 +125,15 @@ public interface RetrofitAPI {
             @Field("customerid") String customerid,
             @Field("photographerid") String photographerid,
             @Field("collectionid") String collectionid
+    );
+
+    @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
+    @FormUrlEncoded
+    @POST("customer/photoAlbum")
+    Call<PhotoResponse> photolist(
+            @Field("photographerid") String photographerid,
+            @Field("collectionid") String collectionid,
+            @Field("addsetid") String addsetid,
+            @Field("customerid") String customerid
     );
 }
