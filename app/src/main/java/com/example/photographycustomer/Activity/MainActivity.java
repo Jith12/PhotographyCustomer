@@ -15,7 +15,9 @@ import android.widget.FrameLayout;
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.photographycustomer.Fragment.HomeFragment;
 import com.example.photographycustomer.Fragment.MyCollectionFragment;
+import com.example.photographycustomer.Fragment.PhotoViewFragment;
 import com.example.photographycustomer.Fragment.ProfileFragment;
+import com.example.photographycustomer.Fragment.SettingFragment;
 import com.example.photographycustomer.Fragment.VendorFragment;
 import com.example.photographycustomer.Helper.Snackbar;
 import com.example.photographycustomer.R;
@@ -61,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
                 bottomBar.setActiveItem(2);
                 Animatoo.animateFade(MainActivity.this);
             }else if (integer == 3){
-                fragmentSelected = new ProfileFragment();
+                fragmentSelected = new PhotoViewFragment();
                 bottomBar.setActiveItem(3);
                 Animatoo.animateFade(MainActivity.this);
             }else if (integer == 4){
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("LOGOUT");
                 builder.setMessage("Are you sure want to Logout?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -87,7 +89,11 @@ public class MainActivity extends AppCompatActivity {
                         dialog.cancel();
                     }
                 });
-                builder.show();
+                builder.show();*/
+
+                fragmentSelected = new SettingFragment();
+                bottomBar.setActiveItem(4);
+                Animatoo.animateFade(MainActivity.this);
             }
             if (fragmentSelected != null) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -111,11 +117,11 @@ public class MainActivity extends AppCompatActivity {
                 bottomBar.setActiveItem(2);
                 Animatoo.animateFade(MainActivity.this);
             }else if (integer == 3){
-                fragmentSelected = new ProfileFragment();
+                fragmentSelected = new PhotoViewFragment();
                 bottomBar.setActiveItem(3);
                 Animatoo.animateFade(MainActivity.this);
             }else if (integer == 4){
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("LOGOUT");
                 builder.setMessage("Are you sure want to Logout?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -137,7 +143,10 @@ public class MainActivity extends AppCompatActivity {
                         dialog.cancel();
                     }
                 });
-                builder.show();
+                builder.show();*/
+                fragmentSelected = new SettingFragment();
+                bottomBar.setActiveItem(4);
+                Animatoo.animateFade(MainActivity.this);
             }
             if (fragmentSelected != null) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -183,6 +192,16 @@ public class MainActivity extends AppCompatActivity {
                 fm.popBackStack();
             }
         }else if (fragment instanceof VendorFragment){
+            FragmentManager fm = getSupportFragmentManager();
+            if (fm.getBackStackEntryCount() > 0) {
+                fm.popBackStack();
+            }
+        }else if (fragment instanceof PhotoViewFragment){
+            FragmentManager fm = getSupportFragmentManager();
+            if (fm.getBackStackEntryCount() > 0) {
+                fm.popBackStack();
+            }
+        }else if (fragment instanceof SettingFragment){
             FragmentManager fm = getSupportFragmentManager();
             if (fm.getBackStackEntryCount() > 0) {
                 fm.popBackStack();

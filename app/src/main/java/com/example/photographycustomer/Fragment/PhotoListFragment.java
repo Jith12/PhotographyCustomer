@@ -1,5 +1,6 @@
 package com.example.photographycustomer.Fragment;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -7,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -136,6 +138,18 @@ public class PhotoListFragment extends Fragment {
         }else {
             snackbar.warning("Check Your Network Connection");
         }
+
+        btnSubmit.setOnClickListener(v -> {
+
+            SelectedFragment fragment = new SelectedFragment();
+            Bundle arguments = new Bundle();
+            arguments.putString("eventName", mParam5);
+            fragment.setArguments(arguments);
+            final FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.container, fragment);
+            ft.commit();
+
+        });
     }
 
     private void photolist() {
