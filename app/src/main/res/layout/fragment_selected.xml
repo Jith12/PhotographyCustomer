@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Fragment.SelectedFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/black">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/folder_image"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/folder"
+                android:padding="@dimen/_5sdp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text=""
+                android:padding="@dimen/_2sdp"
+                android:layout_gravity="start|center"
+                android:gravity="start|center"
+                android:id="@+id/collection_name"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/function_image"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:background="@drawable/rect_black"
+                android:src="@drawable/noimage" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_65sdp"
+                android:layout_marginStart="@dimen/_32sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:layout_marginStart="@dimen/_28sdp"
+                    android:src="@drawable/folder" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/function_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center|bottom"
+                    android:text="selected"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

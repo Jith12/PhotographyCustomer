@@ -18,12 +18,12 @@
 
     <item
         android:id="@+id/profile"
-        android:title="Profile"
-        android:icon="@drawable/profile" />
+        android:title="Images"
+        android:icon="@drawable/selected_img" />
 
     <item
         android:id="@+id/logout"
-        android:title="Logout"
-        android:icon="@drawable/logout" />
+        android:title="Setting"
+        android:icon="@drawable/setting" />
 
 </menu>
