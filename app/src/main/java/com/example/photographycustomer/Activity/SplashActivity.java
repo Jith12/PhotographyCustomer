@@ -22,7 +22,6 @@ public class SplashActivity extends AppCompatActivity {
 
         check = Prefs.getBoolean("loggedIn", false);
 
-
         if (check){
             new Handler().postDelayed(() -> {
                 Intent homeint = new Intent(SplashActivity.this, MainActivity.class);
