@@ -198,6 +198,8 @@ public class LoginActivity extends AppCompatActivity {
                             if (status){
                                 ExistResponse.Data result = data.getData();
 
+                                Prefs.putBoolean("loggedIn", true);
+
                                 otp_view.setOTP(data.getData().getOtpNo());
 
                                 log_mobile_tfb.setVisibility(View.GONE);
@@ -388,6 +390,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 Prefs.putString("c_id", result.getId());
                                 Prefs.putString("c_mobileno", result.getMobileNo());
+                                Prefs.putBoolean("loggedIn", true);
 
                                 log_mobile_tfb.setVisibility(View.GONE);
                                 log_name_tfb.setVisibility(View.VISIBLE);
