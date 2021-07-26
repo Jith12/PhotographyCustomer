@@ -17,6 +17,7 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.photographycustomer.Fragment.AddsetFragment;
+import com.example.photographycustomer.Fragment.CollectionNameFragment;
 import com.example.photographycustomer.Others.Constants;
 import com.example.photographycustomer.R;
 import com.example.photographycustomer.Response.CollectionResponse;
@@ -37,7 +38,7 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
 
     @NonNull
     @Override
-    public CollectionAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_collectionlist, parent, false);
         return new ViewHolder(view);
     }
@@ -80,9 +81,11 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
 
         holder.itemView.setOnClickListener(v -> {
             FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
-            AddsetFragment addsetFragment = AddsetFragment.newInstance(item.getProfileImage(), item.getStudioName(),
-                    item.getRole(), item.getRoleid(), item.getId(), item.getPhotographerId());
-            ft.replace(R.id.container, addsetFragment);
+            /*AddsetFragment addsetFragment = AddsetFragment.newInstance(item.getProfileImage(), item.getStudioName(),
+                    item.getRole(), item.getRoleid(), item.getId(), item.getPhotographerId());*/
+            CollectionNameFragment collectionNameFragment = CollectionNameFragment.newInstance(item.getProfileImage(),
+                    item.getCustomerId(), item.getPhotographerId());
+            ft.replace(R.id.container, collectionNameFragment);
             ft.addToBackStack(null);
             ft.commit();
         });

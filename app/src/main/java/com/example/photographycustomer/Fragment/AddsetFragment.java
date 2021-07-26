@@ -53,8 +53,10 @@ public class AddsetFragment extends Fragment {
     private static final String ARG_PARAM2 = "studioname";
     private static final String ARG_PARAM3 = "role";
     private static final String ARG_PARAM4 = "roleid";
-    private static final String ARG_PARAM5 = "collectionid";
+    private static final String ARG_PARAM5 = "familyid";
     private static final String ARG_PARAM6 = "photographerid";
+    private static final String ARG_PARAM7 = "customerid";
+    private static final String ARG_PARAM8 = "collectionid";
 
     private Loader loader;
     private Snackbar snackbar;
@@ -69,6 +71,8 @@ public class AddsetFragment extends Fragment {
     private String mParam4;
     private String mParam5;
     private String mParam6;
+    private String mParam7;
+    private String mParam8;
 
     private CircleImageView studioImage;
     private AppCompatTextView studioName, studioRole;
@@ -80,7 +84,7 @@ public class AddsetFragment extends Fragment {
 
     // TODO: Rename and change types and number of parameters
     public static AddsetFragment newInstance(String param1, String param2, String param3, String param4
-            , String param5 , String param6) {
+            , String param5, String param6, String param7, String param8) {
         AddsetFragment fragment = new AddsetFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -89,6 +93,8 @@ public class AddsetFragment extends Fragment {
         args.putString(ARG_PARAM4, param4);
         args.putString(ARG_PARAM5, param5);
         args.putString(ARG_PARAM6, param6);
+        args.putString(ARG_PARAM7, param7);
+        args.putString(ARG_PARAM8, param8);
         fragment.setArguments(args);
         return fragment;
     }
@@ -103,6 +109,8 @@ public class AddsetFragment extends Fragment {
             mParam4 = getArguments().getString(ARG_PARAM4);
             mParam5 = getArguments().getString(ARG_PARAM5);
             mParam6 = getArguments().getString(ARG_PARAM6);
+            mParam7 = getArguments().getString(ARG_PARAM7);
+            mParam8 = getArguments().getString(ARG_PARAM8);
         }
     }
 
@@ -173,7 +181,7 @@ public class AddsetFragment extends Fragment {
     private void addsetlist() {
         loader.show("");
         RetrofitAPI api = RetrofitBase.getRetrofit(getActivity()).create(RetrofitAPI.class);
-        Call<AddsetResponse> call = api.addsetlist(customerid, mParam6, mParam5);
+        Call<AddsetResponse> call = api.addsetlist(mParam5, mParam6, mParam7, mParam8);
 
         call.enqueue(new Callback<AddsetResponse>() {
             @Override

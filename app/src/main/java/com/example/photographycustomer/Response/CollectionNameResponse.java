@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class AddsetResponse {
+public class CollectionNameResponse {
 
     @SerializedName("status")
     @Expose
@@ -46,27 +46,33 @@ public class AddsetResponse {
         @SerializedName("id")
         @Expose
         private String id;
-        @SerializedName("collection_id")
-        @Expose
-        private String collectionId;
         @SerializedName("photographer_id")
         @Expose
         private String photographerId;
         @SerializedName("customer_id")
         @Expose
         private String customerId;
-        @SerializedName("family_id")
+        @SerializedName("collection_name")
         @Expose
-        private String familyId;
-        @SerializedName("event_name")
-        @Expose
-        private String eventName;
+        private String collectionName;
         @SerializedName("created_date")
         @Expose
         private String createdDate;
         @SerializedName("status")
         @Expose
         private String status;
+        @SerializedName("role")
+        @Expose
+        private String role;
+        @SerializedName("profile_image")
+        @Expose
+        private String profileImage;
+        @SerializedName("studio_name")
+        @Expose
+        private String studioName;
+        @SerializedName("roleid")
+        @Expose
+        private String roleid;
 
         public String getId() {
             return id;
@@ -74,14 +80,6 @@ public class AddsetResponse {
 
         public void setId(String id) {
             this.id = id;
-        }
-
-        public String getCollectionId() {
-            return collectionId;
-        }
-
-        public void setCollectionId(String collectionId) {
-            this.collectionId = collectionId;
         }
 
         public String getPhotographerId() {
@@ -100,20 +98,12 @@ public class AddsetResponse {
             this.customerId = customerId;
         }
 
-        public String getFamilyId() {
-            return familyId;
+        public String getCollectionName() {
+            return collectionName;
         }
 
-        public void setFamilyId(String familyId) {
-            this.familyId = familyId;
-        }
-
-        public String getEventName() {
-            return eventName;
-        }
-
-        public void setEventName(String eventName) {
-            this.eventName = eventName;
+        public void setCollectionName(String collectionName) {
+            this.collectionName = collectionName;
         }
 
         public String getCreatedDate() {
@@ -130,6 +120,38 @@ public class AddsetResponse {
 
         public void setStatus(String status) {
             this.status = status;
+        }
+
+        public String getRole() {
+            return role;
+        }
+
+        public void setRole(String role) {
+            this.role = role;
+        }
+
+        public String getProfileImage() {
+            return profileImage;
+        }
+
+        public void setProfileImage(String profileImage) {
+            this.profileImage = profileImage;
+        }
+
+        public String getStudioName() {
+            return studioName;
+        }
+
+        public void setStudioName(String studioName) {
+            this.studioName = studioName;
+        }
+
+        public String getRoleid() {
+            return roleid;
+        }
+
+        public void setRoleid(String roleid) {
+            this.roleid = roleid;
         }
 
     }

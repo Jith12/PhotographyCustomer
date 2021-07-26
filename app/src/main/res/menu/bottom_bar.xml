@@ -18,8 +18,8 @@
 
     <item
         android:id="@+id/profile"
-        android:title="Images"
-        android:icon="@drawable/selected_img" />
+        android:title="Favorite"
+        android:icon="@drawable/favorite" />
 
     <item
         android:id="@+id/logout"
