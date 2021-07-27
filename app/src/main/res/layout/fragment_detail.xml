@@ -21,12 +21,13 @@
             app:cardElevation="@dimen/_5sdp"
             app:cardMaxElevation="@dimen/_5sdp"
             app:cardCornerRadius="@dimen/_5sdp"
+            android:background="@color/centerbg"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/background"
+                android:background="@color/centerbg"
                 android:orientation="horizontal">
 
                 <LinearLayout
