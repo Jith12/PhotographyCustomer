@@ -84,7 +84,7 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Vi
             /*AddsetFragment addsetFragment = AddsetFragment.newInstance(item.getProfileImage(), item.getStudioName(),
                     item.getRole(), item.getRoleid(), item.getId(), item.getPhotographerId());*/
             CollectionNameFragment collectionNameFragment = CollectionNameFragment.newInstance(item.getProfileImage(),
-                    item.getCustomerId(), item.getPhotographerId());
+                    item.getCustomerId(), item.getPhotographerId(), item.getStudioName(), item.getRole(), item.getRoleid());
             ft.replace(R.id.container, collectionNameFragment);
             ft.addToBackStack(null);
             ft.commit();

@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,29 +46,33 @@ public class FamilyFragment extends Fragment {
     private static final String ARG_PARAM1 = "collectionid";
     private static final String ARG_PARAM2 = "photographerid";
     private static final String ARG_PARAM3 = "customerid";
+    private static final String ARG_PARAM4 = "collectionname";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private String mParam3;
+    private String mParam4;
 
     private RecyclerView rvFamily;
     private GridLayoutManager gridLayoutManager;
     private FamilyAdapter familyAdapter;
     private Loader loader;
     private Snackbar snack;
+    private AppCompatTextView collectionName;
 
     public FamilyFragment() {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static FamilyFragment newInstance(String param1, String param2, String param3) {
+    public static FamilyFragment newInstance(String param1, String param2, String param3, String param4) {
         FamilyFragment fragment = new FamilyFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         args.putString(ARG_PARAM3, param3);
+        args.putString(ARG_PARAM4, param4);
         fragment.setArguments(args);
         return fragment;
     }
@@ -79,6 +84,7 @@ public class FamilyFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
             mParam3 = getArguments().getString(ARG_PARAM3);
+            mParam4 = getArguments().getString(ARG_PARAM4);
         }
     }
 
@@ -97,11 +103,14 @@ public class FamilyFragment extends Fragment {
         snack = new Snackbar(getActivity());
 
         rvFamily = view.findViewById(R.id.rv_family);
+        collectionName = view.findViewById(R.id.name);
 
         gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         rvFamily.setHasFixedSize(true);
         rvFamily.setNestedScrollingEnabled(false);
         rvFamily.setLayoutManager(gridLayoutManager);
+
+        collectionName.setText(mParam4);
 
         if (ValidUtils.isNetworkAvailable(requireActivity())){
             familylist();
