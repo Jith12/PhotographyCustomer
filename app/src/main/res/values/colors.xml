@@ -31,4 +31,7 @@
     <color name="tabcolor">#414245</color>
     <color name="activecolor">#6c6d6f</color>
     <color name="border">#5d6570</color>
+
+    <color name="topbg">#141c29</color>
+    <color name="centerbg">#2b3442</color>
 </resources>

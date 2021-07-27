@@ -46,7 +46,7 @@ public class CollectionNameAdapter extends RecyclerView.Adapter<CollectionNameAd
         holder.itemView.setOnClickListener(v -> {
             FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
             FamilyFragment familyFragment = FamilyFragment.newInstance(item.getId(), item.getPhotographerId(),
-                    item.getCustomerId());
+                    item.getCustomerId(), item.getCollectionName());
             ft.replace(R.id.container, familyFragment);
             ft.addToBackStack(null);
             ft.commit();

@@ -45,7 +45,8 @@ public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.ViewHolder
         holder.itemView.setOnClickListener(v -> {
             FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
             AddsetFragment addsetFragment = AddsetFragment.newInstance(item.getProfileImage(), item.getStudioName(),
-                    item.getRole(), item.getRoleid(), item.getId(), item.getPhotographerId(), item.getCustomerId(), item.getCollectionId());
+                    item.getRole(), item.getRoleid(), item.getId(), item.getPhotographerId(), item.getCustomerId(), item.getCollectionId(),
+                    item.getFamilyName());
             ft.replace(R.id.container, addsetFragment);
             ft.addToBackStack(null);
             ft.commit();

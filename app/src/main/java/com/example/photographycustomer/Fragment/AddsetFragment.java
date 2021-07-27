@@ -57,6 +57,7 @@ public class AddsetFragment extends Fragment {
     private static final String ARG_PARAM6 = "photographerid";
     private static final String ARG_PARAM7 = "customerid";
     private static final String ARG_PARAM8 = "collectionid";
+    private static final String ARG_PARAM9 = "familyname";
 
     private Loader loader;
     private Snackbar snackbar;
@@ -73,6 +74,7 @@ public class AddsetFragment extends Fragment {
     private String mParam6;
     private String mParam7;
     private String mParam8;
+    private String mParam9;
 
     private CircleImageView studioImage;
     private AppCompatTextView studioName, studioRole;
@@ -84,7 +86,7 @@ public class AddsetFragment extends Fragment {
 
     // TODO: Rename and change types and number of parameters
     public static AddsetFragment newInstance(String param1, String param2, String param3, String param4
-            , String param5, String param6, String param7, String param8) {
+            , String param5, String param6, String param7, String param8, String param9) {
         AddsetFragment fragment = new AddsetFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -95,6 +97,7 @@ public class AddsetFragment extends Fragment {
         args.putString(ARG_PARAM6, param6);
         args.putString(ARG_PARAM7, param7);
         args.putString(ARG_PARAM8, param8);
+        args.putString(ARG_PARAM9, param9);
         fragment.setArguments(args);
         return fragment;
     }
@@ -111,6 +114,7 @@ public class AddsetFragment extends Fragment {
             mParam6 = getArguments().getString(ARG_PARAM6);
             mParam7 = getArguments().getString(ARG_PARAM7);
             mParam8 = getArguments().getString(ARG_PARAM8);
+            mParam9 = getArguments().getString(ARG_PARAM9);
         }
     }
 
@@ -131,16 +135,16 @@ public class AddsetFragment extends Fragment {
         customerid = Prefs.getString("c_id", "");
 
         rvAlbumlist = view.findViewById(R.id.recycle_albumlist);
-        studioImage = view.findViewById(R.id.studio_image);
+        //studioImage = view.findViewById(R.id.studio_image);
         studioName = view.findViewById(R.id.studio_name);
-        studioRole = view.findViewById(R.id.role_name);
+        //studioRole = view.findViewById(R.id.role_name);
 
         gridLayoutManager = new GridLayoutManager(getActivity(),2);
         rvAlbumlist.setHasFixedSize(true);
         rvAlbumlist.setNestedScrollingEnabled(false);
         rvAlbumlist.setLayoutManager(gridLayoutManager);
 
-        CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(getActivity());
+        /*CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(getActivity());
         circularProgressDrawable.setStrokeWidth(5.0f);
         circularProgressDrawable.setCenterRadius(15.0f);
         circularProgressDrawable.start();
@@ -166,10 +170,10 @@ public class AddsetFragment extends Fragment {
                     .load(Constants.CUS_PROFILE_L_URL+mParam1)
                     .apply(requestOptions)
                     .into(studioImage);
-        }
+        }*/
 
-        studioName.setText(mParam2);
-        studioRole.setText(mParam3);
+        studioName.setText(mParam9);
+        //studioRole.setText(mParam3);
 
         if (ValidUtils.isNetworkAvailable(requireActivity())){
             addsetlist();
