@@ -86,7 +86,7 @@ public class DetailFragment extends Fragment implements BottomSheetClickListener
         linearSort = view.findViewById(R.id.linear_sort);
         linearFilter = view.findViewById(R.id.linear_filter);
 
-        layoutManager = new GridLayoutManager(getActivity(), 2);
+        layoutManager = new GridLayoutManager(getActivity(), 3);
         rvDetail.setHasFixedSize(true);
         rvDetail.setNestedScrollingEnabled(false);
         rvDetail.setLayoutManager(layoutManager);
