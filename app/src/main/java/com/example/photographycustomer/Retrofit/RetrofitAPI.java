@@ -4,6 +4,7 @@ import com.example.photographycustomer.Response.AddsetResponse;
 import com.example.photographycustomer.Response.AllViewResponse;
 import com.example.photographycustomer.Response.CollectionNameResponse;
 import com.example.photographycustomer.Response.CollectionResponse;
+import com.example.photographycustomer.Response.CommonResponse;
 import com.example.photographycustomer.Response.ExistResponse;
 import com.example.photographycustomer.Response.FamilyResponse;
 import com.example.photographycustomer.Response.FlagResponse;
@@ -156,4 +157,8 @@ public interface RetrofitAPI {
             @Field("addsetid") String addsetid,
             @Field("customerid") String customerid
     );
+
+    @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
+    @GET("customer/commonName")
+    Call<CommonResponse> common();
 }
