@@ -12,9 +12,11 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.photographycustomer.Fragment.AddsetFragment;
+import com.example.photographycustomer.Fragment.CommonFragment;
 import com.example.photographycustomer.Fragment.FamilyFragment;
 import com.example.photographycustomer.R;
 import com.example.photographycustomer.Response.FamilyResponse;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import java.util.List;
 
@@ -43,11 +45,21 @@ public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.ViewHolder
         holder.studioName.setText(item.getFamilyName());
 
         holder.itemView.setOnClickListener(v -> {
+
+            Prefs.putString("familyid", item.getId());
+            Prefs.putString("photographerid", item.getPhotographerId());
+            Prefs.putString("customerid", item.getCustomerId());
+            Prefs.putString("collectionid", item.getCollectionId());
+            Prefs.putString("familyname", item.getFamilyName());
+
             FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
-            AddsetFragment addsetFragment = AddsetFragment.newInstance(item.getProfileImage(), item.getStudioName(),
+            /*AddsetFragment addsetFragment = AddsetFragment.newInstance(item.getProfileImage(), item.getStudioName(),
+                    item.getRole(), item.getRoleid(), item.getId(), item.getPhotographerId(), item.getCustomerId(), item.getCollectionId(),
+                    item.getFamilyName());*/
+            CommonFragment commonFragment = CommonFragment.newInstance(item.getProfileImage(), item.getStudioName(),
                     item.getRole(), item.getRoleid(), item.getId(), item.getPhotographerId(), item.getCustomerId(), item.getCollectionId(),
                     item.getFamilyName());
-            ft.replace(R.id.container, addsetFragment);
+            ft.replace(R.id.container, commonFragment);
             ft.addToBackStack(null);
             ft.commit();
         });
