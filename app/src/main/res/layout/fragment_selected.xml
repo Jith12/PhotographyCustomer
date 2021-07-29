@@ -15,28 +15,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/black">
+            android:background="@color/centerbg">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/folder_image"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_50sdp"
                 android:src="@drawable/folder"
-                android:padding="@dimen/_5sdp"/>
+                android:padding="@dimen/_2sdp"
+                android:id="@+id/folder"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
-                android:lines="1"
-                android:maxLines="1"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bold"
-                android:textSize="@dimen/_12sdp"
+                android:text="Name"
                 android:textColor="@color/white"
-                android:textAllCaps="false"
-                android:text=""
                 android:padding="@dimen/_2sdp"
-                android:layout_gravity="start|center"
-                android:gravity="start|center"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:textSize="@dimen/_13sdp"
+                android:fontFamily="@font/regular"
+                android:textStyle="bold"
                 android:id="@+id/collection_name"/>
 
         </LinearLayout>
@@ -44,29 +42,57 @@
         <FrameLayout
             android:id="@+id/frame_select"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/function_image"
                 android:layout_width="@dimen/_110sdp"
                 android:layout_height="@dimen/_80sdp"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 android:background="@drawable/rect_black"
                 android:src="@drawable/noimage" />
 
             <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_gravity="start">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_115sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:src="@drawable/folder" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/function_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Selected"
+                    android:textAllCaps="true"
+                    android:layout_gravity="start|center"
+                    android:gravity="center|start"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </FrameLayout>
+
+            <!--<FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_65sdp"
-                android:layout_marginStart="@dimen/_32sdp">
+                android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="@dimen/_120sdp"
                     android:layout_height="@dimen/_80sdp"
-                    android:layout_gravity="center"
+                    android:layout_gravity="start|center"
                     android:scaleType="fitXY"
-                    android:layout_marginStart="@dimen/_28sdp"
                     android:src="@drawable/folder" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -83,7 +109,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/_16sdp" />
 
-            </FrameLayout>
+            </FrameLayout>-->
 
         </FrameLayout>
 

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.photographycustomer.Fragment.AddsetFragment;
 import com.example.photographycustomer.Fragment.CommonFragment;
+import com.example.photographycustomer.Fragment.EalbumFragment;
 import com.example.photographycustomer.R;
 import com.example.photographycustomer.Response.CommonResponse;
 import com.pixplicity.easyprefs.library.Prefs;
@@ -51,11 +52,22 @@ public class CommomAdapter extends RecyclerView.Adapter<CommomAdapter.ViewHolder
         familyname = Prefs.getString("familyname", "");
 
         holder.itemView.setOnClickListener(v -> {
-            FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
-            AddsetFragment addsetFragment = AddsetFragment.newInstance(familyid, photographerid, customerid, collectionid, familyname);
-            ft.replace(R.id.container, addsetFragment);
-            ft.addToBackStack(null);
-            ft.commit();
+            if(item.getId().equals("1"))
+            {
+                FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
+                AddsetFragment addsetFragment = AddsetFragment.newInstance(familyid, photographerid, customerid, collectionid, familyname, item.getCommonName());
+                ft.replace(R.id.container, addsetFragment);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+            else if(item.getId().equals("2"))
+            {
+                FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
+                EalbumFragment ealbumFragment = EalbumFragment.newInstance(familyid, photographerid, customerid, collectionid, familyname, item.getCommonName());
+                ft.replace(R.id.container, ealbumFragment);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
         });
     }
 

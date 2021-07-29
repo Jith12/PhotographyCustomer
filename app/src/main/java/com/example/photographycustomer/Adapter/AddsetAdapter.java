@@ -44,7 +44,7 @@ public class AddsetAdapter extends RecyclerView.Adapter<AddsetAdapter.ViewHolder
         holder.itemView.setOnClickListener(v -> {
             FragmentTransaction ft = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
             PhotoListFragment photoListFragment = PhotoListFragment.newInstance(item.getId(),item.getCustomerId(),
-                    item.getPhotographerId(),item.getCollectionId(),item.getEventName());
+                    item.getPhotographerId(),item.getCollectionId(),item.getEventName(), item.getFamilyId());
             ft.replace(R.id.container, photoListFragment);
             ft.addToBackStack(null);
             ft.commit();

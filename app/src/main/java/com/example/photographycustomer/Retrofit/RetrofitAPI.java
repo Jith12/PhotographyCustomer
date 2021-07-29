@@ -14,6 +14,7 @@ import com.example.photographycustomer.Response.OtpResponse;
 import com.example.photographycustomer.Response.PhotoResponse;
 import com.example.photographycustomer.Response.ProfSaveResponse;
 import com.example.photographycustomer.Response.ProfViewResponse;
+import com.example.photographycustomer.Response.SelectedResponse;
 import com.example.photographycustomer.Response.SixViewResponse;
 import com.example.photographycustomer.Response.SliderResponse;
 
@@ -155,10 +156,24 @@ public interface RetrofitAPI {
             @Field("photographerid") String photographerid,
             @Field("collectionid") String collectionid,
             @Field("addsetid") String addsetid,
-            @Field("customerid") String customerid
+            @Field("customerid") String customerid,
+            @Field("familyid") String familyid
     );
 
     @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
     @GET("customer/commonName")
     Call<CommonResponse> common();
+
+    @Headers({"Authorization:Basic YW5kcm9pZDphcGs=", "x-api-key:photography"})
+    @FormUrlEncoded
+    @POST("customer/selectedPhoto")
+    Call<SelectedResponse> photoselected(
+            @Field("photographerid") String photographerid,
+            @Field("collectionid") String collectionid,
+            @Field("addsetid") String addsetid,
+            @Field("customerid") String customerid,
+            @Field("familyid") String familyid,
+            @Field("emailid") String emailid,
+            @Field("images") String selectedimg
+    );
 }
