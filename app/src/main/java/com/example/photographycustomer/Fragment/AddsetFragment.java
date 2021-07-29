@@ -54,6 +54,7 @@ public class AddsetFragment extends Fragment {
     private static final String ARG_PARAM7 = "customerid";
     private static final String ARG_PARAM8 = "collectionid";
     private static final String ARG_PARAM9 = "familyname";
+    private static final String ARG_PARAM10 = "commonname";
 
     private Loader loader;
     private Snackbar snackbar;
@@ -67,6 +68,7 @@ public class AddsetFragment extends Fragment {
     private String mParam7;
     private String mParam8;
     private String mParam9;
+    private String mParam10;
 
     private CircleImageView studioImage;
     private AppCompatTextView studioName, studioRole;
@@ -77,7 +79,7 @@ public class AddsetFragment extends Fragment {
     }
 
     // TODO: Rename and change types and number of parameters
-    public static AddsetFragment newInstance(String param5, String param6, String param7, String param8, String param9) {
+    public static AddsetFragment newInstance(String param5, String param6, String param7, String param8, String param9, String param10) {
         AddsetFragment fragment = new AddsetFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM5, param5);
@@ -85,6 +87,7 @@ public class AddsetFragment extends Fragment {
         args.putString(ARG_PARAM7, param7);
         args.putString(ARG_PARAM8, param8);
         args.putString(ARG_PARAM9, param9);
+        args.putString(ARG_PARAM10, param10);
         fragment.setArguments(args);
         return fragment;
     }
@@ -98,6 +101,7 @@ public class AddsetFragment extends Fragment {
             mParam7 = getArguments().getString(ARG_PARAM7);
             mParam8 = getArguments().getString(ARG_PARAM8);
             mParam9 = getArguments().getString(ARG_PARAM9);
+            mParam10 = getArguments().getString(ARG_PARAM10);
         }
     }
 
@@ -155,7 +159,7 @@ public class AddsetFragment extends Fragment {
                     .into(studioImage);
         }*/
 
-        studioName.setText(mParam9);
+        studioName.setText(mParam10);
         //studioRole.setText(mParam3);
 
         if (ValidUtils.isNetworkAvailable(requireActivity())){

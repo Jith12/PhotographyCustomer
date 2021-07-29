@@ -55,7 +55,7 @@ public class SelectedFragment extends Fragment {
         selectImage = view.findViewById(R.id.function_image);
         collectionName = view.findViewById(R.id.collection_name);
 
-        collectionName.setText(funName);
+        collectionName.setText(mParam1);
 
         /*RequestOptions options = new RequestOptions()
                 .centerCrop()

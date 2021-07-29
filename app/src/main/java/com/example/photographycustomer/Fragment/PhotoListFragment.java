@@ -1,6 +1,8 @@
 package com.example.photographycustomer.Fragment;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -30,6 +33,7 @@ import com.example.photographycustomer.Retrofit.RetrofitAPI;
 import com.example.photographycustomer.Retrofit.RetrofitBase;
 import com.example.photographycustomer.Retrofit.RetrofitERROR;
 import com.ornach.nobobutton.NoboButton;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -53,6 +57,7 @@ public class PhotoListFragment extends Fragment {
     private static final String ARG_PARAM3 = "photographerid";
     private static final String ARG_PARAM4 = "collectionid";
     private static final String ARG_PARAM5 = "eventname";
+    private static final String ARG_PARAM6 = "familyid";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -60,6 +65,7 @@ public class PhotoListFragment extends Fragment {
     private String mParam3;
     private String mParam4;
     private String mParam5;
+    private String mParam6;
 
     private Loader loader;
     private Snackbar snackbar;
@@ -76,7 +82,7 @@ public class PhotoListFragment extends Fragment {
 
     // TODO: Rename and change types and number of parameters
     public static PhotoListFragment newInstance(String param1, String param2, String param3, String param4,
-                                                String param5) {
+                                                String param5, String param6) {
         PhotoListFragment fragment = new PhotoListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -84,6 +90,7 @@ public class PhotoListFragment extends Fragment {
         args.putString(ARG_PARAM3, param3);
         args.putString(ARG_PARAM4, param4);
         args.putString(ARG_PARAM5, param5);
+        args.putString(ARG_PARAM6, param6);
         fragment.setArguments(args);
         return fragment;
     }
@@ -97,6 +104,7 @@ public class PhotoListFragment extends Fragment {
             mParam3 = getArguments().getString(ARG_PARAM3);
             mParam4 = getArguments().getString(ARG_PARAM4);
             mParam5 = getArguments().getString(ARG_PARAM5);
+            mParam6 = getArguments().getString(ARG_PARAM6);
         }
     }
 
@@ -141,6 +149,32 @@ public class PhotoListFragment extends Fragment {
 
         btnSubmit.setOnClickListener(v -> {
 
+            /*SelectedFragment fragment = new SelectedFragment();
+            Bundle arguments = new Bundle();
+            arguments.putString("eventName", mParam5);
+            fragment.setArguments(arguments);
+            final FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.container, fragment);
+            ft.commit();*/
+
+            Prefs.putString("familyid", mParam6);
+            Prefs.putString("photographerid", mParam2);
+            Prefs.putString("customerid", mParam3);
+            Prefs.putString("collectionid", mParam4);
+            Prefs.putString("eventName", mParam5);
+            Prefs.putString("addsetid", mParam1);
+
+            showalert();
+
+        });
+    }
+
+    private void showalert() {
+
+        Boolean emailVal = Prefs.getBoolean("emailval",false);
+
+        if(emailVal)
+        {
             SelectedFragment fragment = new SelectedFragment();
             Bundle arguments = new Bundle();
             arguments.putString("eventName", mParam5);
@@ -148,14 +182,51 @@ public class PhotoListFragment extends Fragment {
             final FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.container, fragment);
             ft.commit();
+        }
+        else
+        {
+            // Create an alert builder
+            AlertDialog.Builder builder  = new AlertDialog.Builder(getActivity());
+            builder.setTitle("Enter Your Email Id..");
 
-        });
+            // set the custom layout
+            final View customLayout = getLayoutInflater().inflate(R.layout.custom_layout, null);
+            builder.setView(customLayout);
+            builder.setCancelable(false);
+
+            // add a button
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    // send data from the
+                    // AlertDialog to the Activity
+                    dialog.dismiss();
+                    Prefs.putBoolean("emailval", true);
+                    EditText editText = customLayout.findViewById(R.id.editText);
+                    Prefs.putString("emailid", editText.getText().toString());
+
+                    SelectedFragment fragment = new SelectedFragment();
+                    Bundle arguments = new Bundle();
+                    arguments.putString("eventName", mParam5);
+                    fragment.setArguments(arguments);
+                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.container, fragment);
+                    ft.commit();
+                }
+            });
+            // create and show
+            // the alert dialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+
     }
 
     private void photolist() {
         loader.show("");
         RetrofitAPI api = RetrofitBase.getRetrofit(getActivity()).create(RetrofitAPI.class);
-        Call<PhotoResponse> call = api.photolist(mParam3, mParam4, mParam1, mParam2);
+        Call<PhotoResponse> call = api.photolist(mParam3, mParam4, mParam1, mParam2, mParam6);
 
         call.enqueue(new Callback<PhotoResponse>() {
             @Override

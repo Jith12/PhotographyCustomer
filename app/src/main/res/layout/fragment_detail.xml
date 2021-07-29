@@ -45,6 +45,7 @@
                         android:layout_height="@dimen/_15sdp"
                         android:scaleType="fitXY"
                         android:layout_gravity="center"
+                        android:tint="@color/white"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:src="@drawable/sort"/>
 
@@ -84,6 +85,7 @@
                         android:layout_height="@dimen/_15sdp"
                         android:scaleType="fitXY"
                         android:layout_gravity="center"
+                        android:tint="@color/white"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:src="@drawable/filter"/>
 
