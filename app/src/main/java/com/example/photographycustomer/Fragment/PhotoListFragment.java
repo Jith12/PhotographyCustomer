@@ -141,6 +141,13 @@ public class PhotoListFragment extends Fragment {
 
         functionName.setText(mParam5);
 
+        Prefs.putString("familyid", mParam6);
+        Prefs.putString("photographerid", mParam2);
+        Prefs.putString("customerid", mParam3);
+        Prefs.putString("collectionid", mParam4);
+        Prefs.putString("eventName", mParam5);
+        Prefs.putString("addsetid", mParam1);
+
         if (ValidUtils.isNetworkAvailable(requireActivity())){
             photolist();
         }else {
@@ -156,13 +163,6 @@ public class PhotoListFragment extends Fragment {
             final FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.container, fragment);
             ft.commit();*/
-
-            Prefs.putString("familyid", mParam6);
-            Prefs.putString("photographerid", mParam2);
-            Prefs.putString("customerid", mParam3);
-            Prefs.putString("collectionid", mParam4);
-            Prefs.putString("eventName", mParam5);
-            Prefs.putString("addsetid", mParam1);
 
             showalert();
 

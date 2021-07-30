@@ -128,8 +128,50 @@ public class PhotoViewFragment extends Fragment {
             collectionid = Prefs.getString("collectionid", "");
             addsetid = Prefs.getString("addsetid", "");
             emailid = Prefs.getString("emailid", "");
-            sendtoserver(familyid, photographerid, customerid, collectionid, addsetid, emailid, selectedimages1);
+
+            if(emailid.isEmpty())
+            {
+                showalertbox();
+            }
+            else
+            {
+                sendtoserver(familyid, photographerid, customerid, collectionid, addsetid, emailid, selectedimages1);
+            }
+
         });
+    }
+
+    private void showalertbox() {
+
+        AlertDialog.Builder builder  = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Enter Your Email Id..");
+
+        // set the custom layout
+        final View customLayout = getLayoutInflater().inflate(R.layout.custom_layout, null);
+        builder.setView(customLayout);
+        builder.setCancelable(false);
+
+        // add a button
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                // send data from the
+                // AlertDialog to the Activity
+                dialog.dismiss();
+                Prefs.putBoolean("emailval", true);
+                EditText editText = customLayout.findViewById(R.id.editText);
+                Prefs.putString("emailid", editText.getText().toString());
+
+                sendtoserver(familyid, photographerid, customerid, collectionid, addsetid, editText.getText().toString()
+                        , selectedimages1);
+            }
+        });
+        // create and show
+        // the alert dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
     }
 
     private void sendtoserver(String familyid, String photographerid, String customerid, String collectionid,
