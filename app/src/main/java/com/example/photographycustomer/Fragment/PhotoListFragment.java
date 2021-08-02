@@ -142,8 +142,8 @@ public class PhotoListFragment extends Fragment {
         functionName.setText(mParam5);
 
         Prefs.putString("familyid", mParam6);
-        Prefs.putString("photographerid", mParam2);
-        Prefs.putString("customerid", mParam3);
+        Prefs.putString("photographerid", mParam3);
+        Prefs.putString("customerid", mParam2);
         Prefs.putString("collectionid", mParam4);
         Prefs.putString("eventName", mParam5);
         Prefs.putString("addsetid", mParam1);
